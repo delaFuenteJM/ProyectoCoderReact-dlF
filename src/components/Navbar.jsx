@@ -1,18 +1,37 @@
-import CartWidget from "./CartWidget";
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import CartWidget from "./CartWidget"
+import { useState, useEffect } from 'react'
+import { Link } from "react-router"
 
-function Navbar ({link1, link2, link3}){
+function NavBar (){
+
+useEffect(() => {
+    
+}, [])
+
 return(
-    <nav>
-        <h1>Muju</h1>
-    <ul>
-    <li><a href="#">{link1}</a></li>
-    <li><a href="#">{link2}</a></li>
-    <li><a href="#">{link3}</a></li>
-    </ul>
-    <CartWidget/>
-    </nav>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand as={Link} to="/">Muju</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="categorias" id="basic-nav-dropdown">
+            {categories.map (cat => (
+                <NavDropdown.Item as={Link} to={`/category/${cat}`}>{cat}
+                </NavDropdown.Item>
+            ))}
+            </NavDropdown>
+          </Nav>
 
-)
+          <CartWidget />
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+);
 }
 
-export default Navbar;
+export default NavBar;
