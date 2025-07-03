@@ -13,7 +13,7 @@ function MujuNavbar() {
         return res.json();
       })
       .then((data) => {
-        console.log("📦 Categorías desde la API:", data);
+        console.log("Categorías desde la API:", data);
         setCategorias(data);
       })
       .catch((err) => {
