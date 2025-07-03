@@ -1,20 +1,20 @@
 import './App.css'
-
-import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
-import { BrowserRouter, Routes, Route  } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MujuNavbar from "./components/MujuNavbar";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
-    //fracment <>
-    <BrowserRouter> 
-    <NavBar/>
-    <ItemListContainer/>
-    <Routes>
-      <Route path="/" element={<App />} />
-    </Routes>
+    <BrowserRouter>
+      <MujuNavbar />
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/category/:slug" element={<ItemListContainer />} />
+        {/* Podés agregar un 404 más adelante */}
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
+
