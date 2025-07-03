@@ -18,24 +18,22 @@ function MujuNavbar() {
       })
       .catch((err) => {
         console.error("Error al cargar categorías:", err);
-        setCategorias([]); 
+        setCategorias([]);
       });
   }, []);
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/">Muju</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          Muju
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {categorias.length > 0 ? (
               categorias.map((cat) => (
-                <Nav.Link
-                  as={Link}
-                  to={`/category/${cat.slug}`} 
-                  key={cat.slug}               
-                >
+                <Nav.Link as={Link} to={`/category/${cat.slug}`} key={cat.slug}>
                   {cat.name} {}
                 </Nav.Link>
               ))
@@ -51,4 +49,3 @@ function MujuNavbar() {
 }
 
 export default MujuNavbar;
-

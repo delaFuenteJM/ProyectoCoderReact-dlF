@@ -29,7 +29,7 @@ function ItemListContainer() {
   return (
     <div className="container mt-3">
       <h2>{slug ? `Categoría: ${slug}` : "Todos los productos"}</h2>
-      <ItemList productos={productos} />
+      <ItemList items={productos} />
     </div>
   );
 }
