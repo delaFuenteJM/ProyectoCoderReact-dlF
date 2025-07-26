@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react"
+import ItemList from "./ItemList"
+import { useParams } from "react-router-dom"
+import { getProducts, getProductsByCategory } from "../firebase/db";
 
 function ItemListContainer() {
   const { slug } = useParams();
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    const url = slug
-      ? `https://dummyjson.com/products/category/${slug}`
-      : "https://dummyjson.com/products";
-
-    fetch(url)
-      .then((res) => {
-        if (!res.ok) throw new Error("Error al obtener productos");
-        return res.json();
-      })
-      .then((data) => {
-        console.log("Productos:", data.products);
-        setProductos(data.products);
-      })
-      .catch((err) => {
-        console.error("Error cargando productos:", err);
-        setProductos([]);
-      });
+    if (slug) {
+      getProductsByCategory(slug)
+      .then(res => setProductos(res))
+    } else {
+      getProducts().then(res => setProductos(res))
+    } 
   }, [slug]);
 
   return (

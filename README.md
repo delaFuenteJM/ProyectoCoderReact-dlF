@@ -1,12 +1,41 @@
-# React + Vite
+# 🛍️ Muju - E-commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Muju** es una aplicación de e-commerce construida con **React** que permite a los usuarios explorar productos, agregarlos al carrito, visualizar el contenido del mismo y simular una compra.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🧾 Visualización de productos disponibles
+- 🛒 Agregar productos al carrito
+- 🧺 Ver y modificar el contenido del carrito
+- 💳 Simular una compra exitosa
 
-## Expanding the ESLint configuration
+## 🧩 Tecnologías y dependencias
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Esta app fue construida utilizando las siguientes tecnologías y librerías:
+
+- [React](https://reactjs.org/)  
+- [React Router](https://reactrouter.com/en/main) – Para la navegación entre vistas  
+- [Firebase](https://firebase.google.com/docs) – Para base de datos y servicios backend  
+- [React Bootstrap](https://react-bootstrap.github.io/) – Para el diseño de componentes UI  
+
+## 🔧 Instalación y ejecución
+
+1. Cloná el repositorio:
+   ```bash
+   git clone https://github.com/delaFuenteJM/ProyectoCoderReact-dlF.git
+   ```
+
+2. Instalá las dependencias:
+   ```bash
+   npm install
+   ```
+
+3. Iniciá la app:
+   ```bash
+   npm start
+   ```
+
+
+## 👨‍💻 Autor
+
+Desarrollado por **Juan Manuel de la Fuente** para Coderhouse.
